@@ -16,10 +16,9 @@ public class Application extends Controller {
   public static Result notification() {
 	  RequestBody body = request().body();
 	  JsonNode data=body.asJson();
-	  String params=data.get("params").asText();
-	  String event=data.get("event").asText();
 
-    return ok("les params sont : "+params+"l evenement est: "+event);
+    return ok("les params sont : "+data.get("params").toString()+"l evenement est: "+data.get("event").toString());
+
 
   }
   
